@@ -1,0 +1,29 @@
+/* MainLayout */
+
+.main-layout {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-layout__wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.main-layout__navigation {
+    margin-top: -32px;
+    margin-bottom: 32px;
+}
+
+.main-layout__footer {
+    margin-top: auto;
+}
+
+/* EmptyLayout */
+
+.empty-layout {
+    width: 100vw;
+    height: 100vh;
+}

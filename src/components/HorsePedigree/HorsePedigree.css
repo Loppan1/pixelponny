@@ -1,0 +1,14 @@
+.horse-pedigree__pedigree {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+}
+
+.pedigree-cell__gen-one {
+    grid-row: span 4;
+}
+
+.pedigree-cell__gen-two {
+    grid-row: span 2;
+}

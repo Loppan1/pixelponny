@@ -1,0 +1,53 @@
+/* HomePage */
+.home-page {
+    & img {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+        z-index: 5;
+    }
+
+    & h1 {
+        margin: 16px;
+        text-align: center;
+    }
+
+    & h2 {
+        margin: 16px 0 0 0;
+    }
+
+    & p {
+        margin: 0;
+    }
+}
+
+/* HorsePage */
+.horse-page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.horse-page__column-two {
+    grid-column: span 2;
+}
+
+.horse-page__column-three {
+    grid-column: span 3;
+}
+
+/* StablePage */
+.stable-page__horses {
+    width: 100%;
+    text-align: left;
+}
+
+.stable-page__pagination {
+    display: flex;
+    justify-content: center;
+}
+
+/* MyStablesPage */
+.my-stables__results {
+    width: 100%;
+    text-align: left;
+}

@@ -1,0 +1,37 @@
+.navigation {
+    display: flex;
+    position: relative;
+    padding: 0 20px;
+    background-color: #59AAEC;
+    border-radius: 12px;
+
+    & img {
+        position: absolute;
+        width: 144px;
+        z-index: 10;
+        margin-top: -40px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: #59AAEC 4px solid;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+.navigation__left {
+    margin-left: 162px;
+    display: flex;
+    gap: 16px;
+}
+
+.navigation__right {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+}
+
+.navigation__logout-button:hover {
+    color: #B325AB;
+}
