@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Stable } from "../../types/types";
 import { Link } from "react-router-dom";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { db } from "../../api/firebase";
-import SectionTitle from "../SectionTitle/SectionTitle";
-import "./Stables.css";
+import { Stable } from "../types/types";
+import { db } from "../api/firebase";
+import SectionTitle from "../components/SectionTitle/SectionTitle";
+import "./pages.css";
 
-const Stables = ({}: {}) => {
+const StablesPage = ({}: {}) => {
   const [results, setResults] = useState<Stable[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -72,4 +72,4 @@ const Stables = ({}: {}) => {
   );
 };
 
-export default Stables;
+export default StablesPage;

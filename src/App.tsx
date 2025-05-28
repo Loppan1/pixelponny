@@ -7,10 +7,10 @@ import EmptyLayout from "./layouts/EmptyLayout";
 import SearchPage from "./pages/SearchPage";
 import RegisterPage from "./pages/RegisterPage";
 import HorsePage from "./pages/HorsePage";
-import Stables from "./components/Stables/Stables";
 import StablePage from "./pages/StablePage";
 import MyStablesPage from "./pages/MyStablesPage";
 import AdminPage from "./pages/AdminPage";
+import StablesPage from "./pages/StablesPage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/horse/:id" element={<HorsePage />} />
-        <Route path="/stables" element={<Stables />} />
+        <Route path="/stables" element={<StablesPage />} />
         <Route path="/stables/:name" element={<StablePage />} />
         <Route path="/mystables" element={<MyStablesPage />} />
       </Route>

@@ -3,6 +3,7 @@ import { loginWithUsername } from "../../services/authService";
 import "./Login.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useNavigate } from "react-router-dom";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -10,6 +11,7 @@ const Login = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  usePageTitle("Login");
 
   const handleLogin = async () => {
     setError(null);

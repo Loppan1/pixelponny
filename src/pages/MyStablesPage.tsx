@@ -4,12 +4,14 @@ import { db } from "../api/firebase";
 import { Stable } from "../types/types";
 import { useAuth } from "../hooks/useAuth";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const MyStablesPage = () => {
   const { user } = useAuth();
   const [username, setUsername] = useState<string | null>(null);
   const [stables, setStables] = useState<Stable[]>([]);
   const [loading, setLoading] = useState(true);
+  usePageTitle("My Stables");
 
   useEffect(() => {
     const fetchUsernameAndStables = async () => {

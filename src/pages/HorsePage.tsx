@@ -7,11 +7,13 @@ import HorseInfo from "../components/HorseInfo/HorseInfo";
 import HorseAchievements from "../components/HorseAchievements/HorseAchievements";
 import HorsePedigree from "../components/HorsePedigree/HorsePedigree";
 import HorseOffspring from "../components/HorseOffspring/HorseOffspring";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const HorsePage = () => {
   const { id } = useParams<{ id: string }>();
   const [horse, setHorse] = useState<Horse | null>(null);
   const [loading, setLoading] = useState(true);
+  usePageTitle(horse?.name);
 
   useEffect(() => {
     const fetchHorse = async () => {

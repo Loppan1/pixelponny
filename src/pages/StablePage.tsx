@@ -6,6 +6,7 @@ import { db } from "../api/firebase";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
 import { findHorsesByIds } from "../utility/findHorsesByIds";
 import { Link } from "react-router-dom";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const StablePage = () => {
   const { name } = useParams<{ name: string }>();
@@ -20,6 +21,7 @@ const StablePage = () => {
   const bredHorseIds = stable?.bredHorses ?? [];
   const totalPagesReg = Math.ceil(registeredHorseIds.length / pageSize);
   const totalPagesBred = Math.ceil(bredHorseIds.length / pageSize);
+  usePageTitle(name);
 
   useEffect(() => {
     const fetchStable = async () => {

@@ -1,7 +1,10 @@
 import "./pages.css";
 import banner from "../assets/banner.jpg";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const HomePage = () => {
+  usePageTitle("Home");
+
   return (
     <div className="home-page">
       <img src={banner} />
