@@ -52,6 +52,15 @@
     text-align: left;
 }
 
+.my-stables__section {
+    display: flex;
+    flex-direction: column;
+
+    & button {
+        margin-left: auto;
+    }
+}
+
 /* StablesPage */
 .stables__results {
     width: 100%;
