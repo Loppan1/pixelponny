@@ -4,12 +4,16 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import "./HorseInfo.css";
 import EditHorseForm from "../EditHorseForm/EditHorseForm";
 import Modal from "../Modal/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { useStableOwnership } from "../../contexts/StableOwnershipContext";
 
 type HorseInfoProps = {
   horse: Horse;
 };
 
 const HorseInfo: React.FC<HorseInfoProps> = ({ horse }) => {
+  const { canEdit, loading } = useStableOwnership();
   const [editing, setEditing] = useState(false);
 
   return (
@@ -17,7 +21,15 @@ const HorseInfo: React.FC<HorseInfoProps> = ({ horse }) => {
       <SectionTitle
         title={horse.name}
         smallTitle={horse.id}
-        editButton={<button onClick={() => setEditing(true)}>Edit</button>}
+        editButton={
+          <>
+            {!loading && canEdit && (
+              <button onClick={() => setEditing(true)}>
+                <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
+            )}
+          </>
+        }
       />
       <div className="horse-info section-wrapper">
         <div className="horse-info__info-section">

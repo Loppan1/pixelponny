@@ -13,3 +13,19 @@
         padding-top: 6px;
     }
 }
+
+.section-title__edit {
+    position: absolute;
+    margin-left: 640px;
+    margin-bottom: 20px;
+
+    & button {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    & button:hover {
+       color: #B325AB;
+    }
+}

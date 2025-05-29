@@ -8,6 +8,7 @@ import HorseAchievements from "../components/HorseAchievements/HorseAchievements
 import HorsePedigree from "../components/HorsePedigree/HorsePedigree";
 import HorseOffspring from "../components/HorseOffspring/HorseOffspring";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { StableOwnershipProvider } from "../contexts/StableOwnershipContext";
 
 const HorsePage = () => {
   const { id } = useParams<{ id: string }>();
@@ -44,20 +45,22 @@ const HorsePage = () => {
   if (!horse) return <p> No horse found with id: {id}</p>;
 
   return (
-    <div className="horse-page">
-      <div className="horse-page__column-two">
-        <HorseInfo horse={horse} />
+    <StableOwnershipProvider stableName={horse.owner ?? ""}>
+      <div className="horse-page">
+        <div className="horse-page__column-two">
+          <HorseInfo horse={horse} />
+        </div>
+        <div className="horse-page__column-one">
+          <HorseAchievements horse={horse} />
+        </div>
+        <div className="horse-page__column-three">
+          <HorsePedigree horse={horse} />
+        </div>
+        <div className="horse-page__column-three">
+          <HorseOffspring horse={horse} />
+        </div>
       </div>
-      <div className="horse-page__column-one">
-        <HorseAchievements horse={horse} />
-      </div>
-      <div className="horse-page__column-three">
-        <HorsePedigree horse={horse} />
-      </div>
-      <div className="horse-page__column-three">
-        <HorseOffspring horse={horse} />
-      </div>
-    </div>
+    </StableOwnershipProvider>
   );
 };
 
