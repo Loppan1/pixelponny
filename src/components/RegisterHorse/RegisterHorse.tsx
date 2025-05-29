@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { db } from "../../api/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import "./RegisterHorse.css";
 import { generateCustomHorseId } from "../../utility/generateCustomHorseId";
 import { findHorsesByName } from "../../utility/findHorsesByName";
@@ -42,7 +42,7 @@ const RegisterHorse = () => {
       const sireRef = selectedSire || sire;
       const damRef = selectedDam || dam;
 
-      await addDoc(collection(db, "horses"), {
+      await setDoc(doc(db, "horses", id), {
         id,
         name,
         breed,

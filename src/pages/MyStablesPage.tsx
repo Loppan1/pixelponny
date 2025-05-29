@@ -59,6 +59,7 @@ const MyStablesPage = () => {
 
   const handleAddSuccess = () => {
     setShowModal(false);
+    window.location.reload();
   };
 
   if (loading) return <p>Loading...</p>;
